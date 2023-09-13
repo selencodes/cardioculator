@@ -25,7 +25,7 @@ import lightgbm
 
 import streamlit as st
 
-model = joblib.load(r'C:\Users\fatse\final_model.pkl')
+model = joblib.load(r'final_model.pkl')
 
 st.title("Kardiyovasküler Hastalık Riskinizi Hesaplayın")
 
