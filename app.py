@@ -59,7 +59,7 @@ else:
 
 if kolesterol <= 200:
     kol = 1
-elif kolesterol == range(200,240):
+elif kolesterol in range(200,240):
     kol = 2
 elif kolesterol >=240:
     kol = 3
