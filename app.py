@@ -78,7 +78,7 @@ data = {'blood_pressure_category': kat,
 def show_recommendations():
     st.write("""
     Öneriler:
-    * DÜzenli olarak günde en az 30 dakika yürüyüş yapın.
+    * Düzenli olarak günde en az 30 dakika yürüyüş yapın.
     * Yağlı besinleri, kızartma yiyecekleri, fast food tarzı yeme düzenini  bırakın.  
     * Düzenli egzersiz yapın.
     * Sigara ve alkol gibi alışkanlıklarınızı bırakın.
