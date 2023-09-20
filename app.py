@@ -91,8 +91,8 @@ if st.button("Calculate"):
     user = pd.DataFrame([data])
     prediction = model.predict(user)
     if prediction[0]==1:
-        st.write("Kardiyovasküler hastalık geçirme riskiniz yüksek.")
+        st.write("Your cardiovascular disease risk seems higher than usual.")
         show_recommendations()
     else :
-        st.write("Kardiyovasküler hastalık geçirme riskiniz düşük.")
+        st.write("Your current risk for cardiovascular disease appears to be low.")
         good_health()
