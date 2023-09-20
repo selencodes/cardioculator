@@ -32,7 +32,7 @@ st.title("Calculate your cardiovascular disease risk with Cardioculator!")
 
 yas = st.number_input("Enter your age :", step = 1)
 kolesterol = st.number_input("Enter your total cholesterol value from your blood test :", step=1, value = 0)
-sistolik = st.number_input("Enter your systolic (higher) blood pressure value in mm Hg. (For example, if your blood pressure is 12/8, it is considered as 120/80 mm Hg, where your systolic pressure is 120) :", step =1, value = 0)
+sistolik = st.number_input("Enter your systolic (higher) blood pressure value in mm Hg. (For example, if your blood pressure is 12/8, it is considered as 120/80 mm Hg, where your systolic pressure is 120) :", step =1, placeholder='Yazınız', value = 0)
 diastolik = st.number_input("Enter your diastolic (lower) blood pressure value in mm Hg. (For example, if your blood pressure is 12/8, it is considered as 120/80 mm Hg, where your diastolic pressure is 80) :", step =1, value = 0)
 boy =st.number_input("Enter your height in centimeters :", min_value=1, step =1)
 kilo = st.number_input("Enter your weight in kilograms :", min_value=1, step =1)
