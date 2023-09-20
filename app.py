@@ -27,32 +27,32 @@ import streamlit as st
 
 model = joblib.load(r'final_model.pkl')
 
-st.title("Kardiyovasküler Hastalık Riskinizi Hesaplayın")
+st.title("Calculate your cardiovascular disease risk with Cardioculator!")
 
-# Kullanıcıdan giriş al
-yas = st.number_input("Yaşınızı girin:", step = 1)
-kolesterol = st.number_input("Kolesterol değerinizi girin:", step=1, value = 0)
-sistolik = st.number_input("Büyük (Sistolik) tansiyon değerinizi girin:", step =1, value = 0)
-diastol = st.number_input("Küçük (Diyastolik) tansiyon değerinizi girin :", step =1, value = 0)
-boy =st.number_input("Boyunuzu cm cinsinden giriniz :", min_value=1, step =1)
-kilo = st.number_input("Kilonuzu kg cinsinden giriniz :", min_value=1, step =1)
+
+yas = st.number_input("Enter your age :", step = 1)
+kolesterol = st.number_input("Enter your total cholesterol value from your blood test :", step=1, value = 0)
+sistolik = st.number_input("Enter your systolic (higher) blood pressure value in mm Hg. (For example, if your blood pressure is 12/8, it is considered as 120/80 mm Hg, where your systolic pressure is 120) :", step =1, value = 0)
+diastolik = st.number_input("Enter your diastolic (lower) blood pressure value in mm Hg. (For example, if your blood pressure is 12/8, it is considered as 120/80 mm Hg, where your diastolic pressure is 80) :", step =1, value = 0)
+boy =st.number_input("Enter your height in centimeters :", min_value=1, step =1)
+kilo = st.number_input("Enter your weight in kilograms :", min_value=1, step =1)
 
 bmi = kilo *10000 / (boy**2)
-if sistolik < 120 and diastol < 80:
+if sistolik < 120 and diastolik < 80:
         kat =  0
-elif sistolik < 130 and diastol < 85:
+elif sistolik < 130 and diastolik < 85:
         kat = 1
-elif (sistolik >= 130 and sistolik <= 139) or (diastol >= 85 and diastol <= 89):
+elif (sistolik >= 130 and sistolik <= 139) or (diastolik >= 85 and diastol <= 89):
         kat = 2
-elif (sistolik >= 140 and sistolik <= 159) or (diastol >= 90 and diastol <= 99):
+elif (sistolik >= 140 and sistolik <= 159) or (diastolik >= 90 and diastolik <= 99):
         kat = 3
-elif (sistolik >= 160 and sistolik <= 179) or (diastol >= 100 and diastol <= 109):
+elif (sistolik >= 160 and sistolik <= 179) or (diastolik >= 100 and diastolik <= 109):
         kat = 4
-elif sistolik >= 180 or diastol >= 110:
+elif sistolik >= 180 or diastolik >= 110:
         kat = 5
-elif sistolik >= 140 and sistolik <= 160 and diastol < 90:
+elif sistolik >= 140 and sistolik <= 160 and diastolik < 90:
         kat = 6
-elif sistolik > 160 and diastol < 90:
+elif sistolik > 160 and diastolik < 90:
         kat = 7
 else:
         kat = -1
@@ -65,8 +65,6 @@ elif kolesterol >=240:
     kol = 3
 
 
-
-
 data = {'blood_pressure_category': kat,
     'ap_hi': sistolik,
     'ap_lo':diastol,
@@ -77,25 +75,19 @@ data = {'blood_pressure_category': kat,
 
 def show_recommendations():
     st.write("""
-    Öneriler:
-    * Düzenli olarak günde en az 30 dakika yürüyüş yapın.
-    * Yağlı besinleri, kızartma yiyecekleri, fast food tarzı yeme düzenini  bırakın.  
-    * Düzenli egzersiz yapın.
-    * Sigara ve alkol gibi alışkanlıklarınızı bırakın.
-    * Stresten uzak durmaya çalışın.
-    * Su tüketiminize dikkat edin.
+   Recommendations:
+        * Walk at least 30 minutes daily.
+        * Avoid fatty foods, fried items, and fast-food habits.
+        * Engage in regular exercise.
+        * Quit habits like smoking and alcohol consumption.
+        * Try to stay away from stress.
+        * Be mindful of your water intake.
     """)
 
 def good_health():
-    st.write("""Sağlığınıza dikkat etmeye devam edin. 
-    Kalp hastalıklarından kaçınmak için doğru yoldasınız gibi görünüyor. """)
+    st.write(""" Keep taking care of your health. It seems you're on the right track to avoid heart diseases. """)
 
-
-
-
-# Tahmin butonu
-if st.button("Tahmin Et"):
-    # Veriyi model için uygun formata getir (bu örnekte basit bir liste)
+if st.button("Calculate"):
     user = pd.DataFrame([data])
     prediction = model.predict(user)
     if prediction[0]==1:
@@ -103,3 +95,4 @@ if st.button("Tahmin Et"):
         show_recommendations()
     else :
         st.write("Kardiyovasküler hastalık geçirme riskiniz düşük.")
+        good_health()
