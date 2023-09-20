@@ -76,12 +76,13 @@ data = {'blood_pressure_category': kat,
 def show_recommendations():
     st.write("""
    Recommendations:
-        * Walk at least 30 minutes daily.
-        * Avoid fatty foods, fried items, and fast-food habits.
-        * Engage in regular exercise.
-        * Quit habits like smoking and alcohol consumption.
-        * Try to stay away from stress.
-        * Be mindful of your water intake.
+   
+* Walk at least 30 minutes daily.
+* Avoid fatty foods, fried items, and fast-food habits.
+* Engage in regular exercise.
+* Quit habits like smoking and alcohol consumption.
+* Try to stay away from stress.
+* Be mindful of your water intake.
     """)
 
 def good_health():
@@ -91,8 +92,8 @@ if st.button("Calculate"):
     user = pd.DataFrame([data])
     prediction = model.predict(user)
     if prediction[0]==1:
-        st.write("Your cardiovascular disease risk seems higher than usual.")
+        st.header("Your cardiovascular disease risk seems higher than usual.")
         show_recommendations()
     else :
-        st.write("Your current risk for cardiovascular disease appears to be low.")
+        st.header("Your current risk for cardiovascular disease appears to be low.")
         good_health()
