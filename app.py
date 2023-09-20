@@ -67,7 +67,7 @@ elif kolesterol >=240:
 
 data = {'blood_pressure_category': kat,
     'ap_hi': sistolik,
-    'ap_lo':diastol,
+    'ap_lo':diastolik,
     'age':yas,
     'cholesterol':kol,
     'bmi':bmi}
