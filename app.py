@@ -24,6 +24,8 @@ import joblib
 import lightgbm
 
 import streamlit as st
+from PIL import Image
+
 
 model = joblib.load(r'final_model.pkl')
 image = Image.open("cardioculator.jpg")
