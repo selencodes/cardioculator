@@ -28,8 +28,8 @@ from PIL import Image
 
 
 model = joblib.load(r'final_model.pkl')
-image = Image.open("cardioculator.jpg", width = 500)
-st.image(image)
+image = Image.open("cardioculator.jpg")
+st.image(image, width = 500)
 st.title("Calculate your cardiovascular disease risk with Cardioculator!")
 
 
