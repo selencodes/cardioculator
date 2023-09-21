@@ -26,7 +26,8 @@ import lightgbm
 import streamlit as st
 
 model = joblib.load(r'final_model.pkl')
-
+image = Image.open("cardioculator.jpg")
+st.image(image)
 st.title("Calculate your cardiovascular disease risk with Cardioculator!")
 
 
