@@ -24,7 +24,7 @@ import joblib
 import lightgbm
 
 import streamlit as st
-from PIL import Image
+#from PIL import Image
 
 
 model = joblib.load(r'final_model.pkl')
@@ -32,10 +32,10 @@ model = joblib.load(r'final_model.pkl')
 
 
 
-image = Image.open("img_final.png")
-col1, col2, col3 = st.columns([0.3, 0.4, 0.3])
-with col2:
-        st.image(image, width = 300, output_format = "PNG")
+#image = Image.open("img_final.png")
+#col1, col2, col3 = st.columns([0.3, 0.4, 0.3])
+#with col2:
+#        st.image(image, width = 300, output_format = "PNG")
 
 st.title("Calculate your cardiovascular disease risk with Cardioculator!")
 
