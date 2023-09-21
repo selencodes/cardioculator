@@ -33,13 +33,7 @@ col1, col2, col3 = st.columns([0.3, 0.4, 0.3])
 with col2:
         st.image(image, width = 200)
 
-"""
-image_path = ("cardd.jpeg")
-st.markdown(
-        f"<div style="text-align: center; margin: auto;"><img src="{image_path}" style="max-width: 90%; margin: 0 auto;"></div",
-        unsafe_allow_html=True
-)
-"""
+
 
 
 st.title("Calculate your cardiovascular disease risk with Cardioculator!")
