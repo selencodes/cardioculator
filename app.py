@@ -32,7 +32,7 @@ model = joblib.load(r'final_model.pkl')
 
 
 
-image = Image.open("cardd.jpeg")
+image = Image.open("0.jpeg")
 col1, col2, col3 = st.columns([0.3, 0.4, 0.3])
 with col2:
         st.image(image, width = 300)
