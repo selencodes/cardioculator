@@ -31,12 +31,13 @@ model = joblib.load(r'final_model.pkl')
 
 
 
+st.title("Calculate your cardiovascular disease risk with Cardioculator!")
 
 image = Image.open("cardd.jpeg")
 col1, col2, col3 = st.columns([0.3, 0.4, 0.3])
 with col2:
-        st.image(image, width = 250)
-st.title("Calculate your cardiovascular disease risk with Cardioculator!")
+        st.image(image, width = 300)
+
 
 
 yas = st.number_input("Enter your age :", step = 1)
