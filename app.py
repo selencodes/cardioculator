@@ -30,7 +30,7 @@ from PIL import Image
 model = joblib.load(r'final_model.pkl')
 image = Image.open("cardd.jpeg")
 col1, col2, col3 = st.beta_columns([100, 6, 100])
-with col:2
+with col2:
         st.image(image, width = 200)
 
 """
