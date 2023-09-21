@@ -33,7 +33,7 @@ model = joblib.load(r'final_model.pkl')
 
 image_path = ("cardd.jpeg")
 st.markdown(
-        f"<div style="display: flex; justify-content: center"><img src="{image_path}" width="300" /></div",
+        f"<div style="text-align: center; margin: auto;"><img src="{image_path}" style="max-width: 90%; margin: 0 auto;"></div",
         unsafe_allow_html=True
 )
 
