@@ -28,15 +28,18 @@ from PIL import Image
 
 
 model = joblib.load(r'final_model.pkl')
-#image = Image.open("cardd.jpeg")
-#st.image(image, width = 200)
+image = Image.open("cardd.jpeg")
+col1, col2, col3 = st.beta_columns([1, 6, 1])
+with col:2
+        st.image(image, width = 200)
 
+"""
 image_path = ("cardd.jpeg")
 st.markdown(
         f"<div style="text-align: center; margin: auto;"><img src="{image_path}" style="max-width: 90%; margin: 0 auto;"></div",
         unsafe_allow_html=True
 )
-
+"""
 
 
 st.title("Calculate your cardiovascular disease risk with Cardioculator!")
