@@ -29,7 +29,7 @@ from PIL import Image
 
 model = joblib.load(r'final_model.pkl')
 image = Image.open("cardd.jpeg")
-col1, col2, col3 = st.columns([10, 6, 1])
+col1, col2, col3 = st.columns([0.3, 0.4, 0.3])
 with col2:
         st.image(image, width = 200)
 
